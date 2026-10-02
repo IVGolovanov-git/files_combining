@@ -7,3 +7,20 @@
 Используется:
 1) Библиотека: sys
 2) Метод: argv(): list - список аргументов, переданных при запуске программы
+3) Применяется конструкция Try-Expect-Finally для обхода ошибки в случае отсутствия файла:
+   
+**     
+    
+
+    try:   
+        with open(file_names[i], 'r', encoding='utf-8') as f:
+        
+        file_text = f.read()
+             
+    except FileNotFoundError:
+    
+        print("Файл не найден.")
+        
+        continue
+        
+**
